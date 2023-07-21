@@ -4,7 +4,7 @@
 import torch
 import torch.nn.functional as F
 from shared_utilities import PyTorchMLP, compute_accuracy, get_dataset_loaders
-from watermark import watermark
+
 
 
 def compute_total_loss(model, dataloader, device=None):
@@ -69,7 +69,6 @@ def train(
 
 if __name__ == "__main__":
 
-    print(watermark(packages="torch,lightning", python=True))
     print("Torch CUDA available?", torch.cuda.is_available())
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

@@ -5,7 +5,7 @@ import lightning as L
 import torch
 import torch.nn.functional as F
 from shared_utilities import PyTorchMLP, compute_accuracy, get_dataset_loaders
-from watermark import watermark
+
 
 
 # LightningModule that receives a PyTorch model as input
@@ -39,7 +39,6 @@ class LightningModel(L.LightningModule):
 
 if __name__ == "__main__":
 
-    print(watermark(packages="torch,lightning", python=True))
     print("Torch CUDA available?", torch.cuda.is_available())
 
     train_loader, val_loader, test_loader = get_dataset_loaders()
